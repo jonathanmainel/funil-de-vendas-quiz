@@ -11,7 +11,7 @@ import { retryQueuedLeads, submitLead } from "./services/leadService";
 import { readAttribution } from "./utils/attribution";
 import { calculateQualification } from "./utils/qualification";
 
-const storageKey = "fdv_incompany_quiz_state_v1";
+const storageKey = "fdv_incompany_quiz_state_v2";
 
 function readSavedState() {
   try {
@@ -66,7 +66,9 @@ function App() {
     setIsTransitioning(true);
 
     window.setTimeout(() => {
-      if (questionIndex === 4) trackEvent("QuizHalfway", attribution);
+      if (questionIndex === Math.floor(questions.length / 2) - 1) {
+        trackEvent("QuizHalfway", attribution);
+      }
       if (questionIndex === questions.length - 1) {
         setScreen("contact");
         trackEvent("ContactFormViewed", attribution);
@@ -94,7 +96,10 @@ function App() {
     if (isSubmitting) return;
     setIsSubmitting(true);
     setSubmitError("");
-    const qualification = calculateQualification(answers);
+    const qualification = calculateQualification({
+      ...answers,
+      jobTitle: contact.jobTitle,
+    });
 
     try {
       const result = await submitLead({

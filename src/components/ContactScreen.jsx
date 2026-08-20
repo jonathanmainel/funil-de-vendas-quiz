@@ -47,7 +47,7 @@ export function ContactScreen({ onSubmit, onBack, isSubmitting, submitError, onP
 
   return (
     <section className="screen screen--contact" aria-labelledby="contact-title">
-      <ProgressBar current={9} total={9} />
+      <ProgressBar current={8} total={8} />
       <div className="question-meta">Última etapa</div>
       <h1 id="contact-title" className="contact-title">
         Como nossa equipe pode falar com você?
@@ -84,10 +84,9 @@ export function ContactScreen({ onSubmit, onBack, isSubmitting, submitError, onP
           error={errors.email}
           onChange={(value) => update("email", value)}
         />
-        <Field
+        <SelectField
           label="Cargo"
           name="jobTitle"
-          autoComplete="organization-title"
           value={form.jobTitle}
           error={errors.jobTitle}
           onChange={(value) => update("jobTitle", value)}
@@ -147,6 +146,34 @@ function Field({ label, name, type = "text", value, error, onChange, className =
         onChange={(event) => onChange(event.target.value)}
         {...props}
       />
+      {error ? (
+        <span className="field-error" id={errorId}>
+          {error}
+        </span>
+      ) : null}
+    </label>
+  );
+}
+
+function SelectField({ label, name, value, error, onChange }) {
+  const errorId = `${name}-error`;
+  return (
+    <label className="field">
+      <span>{label}</span>
+      <select
+        name={name}
+        value={value}
+        aria-invalid={Boolean(error)}
+        aria-describedby={error ? errorId : undefined}
+        onChange={(event) => onChange(event.target.value)}
+      >
+        <option value="" disabled>
+          Selecione uma opção
+        </option>
+        <option value="Dono ou sócio">Dono ou sócio</option>
+        <option value="Gestor comercial">Gestor comercial</option>
+        <option value="Outro cargo">Outro cargo</option>
+      </select>
       {error ? (
         <span className="field-error" id={errorId}>
           {error}
