@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { calculateQualification } from "../utils/qualification";
 
 const healthyAnswers = {
-  role: "owner",
+  jobTitle: "Dono ou sócio",
   team_size: "three_five",
   process: "documented",
   goals: "action_plan",

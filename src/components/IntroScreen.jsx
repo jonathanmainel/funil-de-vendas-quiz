@@ -4,7 +4,7 @@ import { ProgressBar } from "./ProgressBar";
 export function IntroScreen({ onStart }) {
   return (
     <section className="screen screen--intro" aria-labelledby="intro-title">
-      <ProgressBar current={1} total={9} />
+      <ProgressBar current={1} total={8} />
       <div className="intro-content">
         <h1 id="intro-title">Onde sua operação comercial está perdendo força?</h1>
         <p className="lead">

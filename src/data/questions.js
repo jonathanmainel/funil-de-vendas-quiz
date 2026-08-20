@@ -1,11 +1,13 @@
 export const questions = [
   {
-    id: "role",
-    question: "Qual é o seu papel na empresa?",
+    id: "bottleneck",
+    question: "Qual é hoje o principal gargalo comercial?",
     answers: [
-      { value: "owner", label: "Dono ou sócio" },
-      { value: "manager", label: "Gestor comercial" },
-      { value: "other", label: "Outro cargo" },
+      { value: "prospecting", label: "Prospecção" },
+      { value: "followup", label: "Acompanhamento" },
+      { value: "conversion", label: "Conversão" },
+      { value: "team", label: "Gestão da equipe" },
+      { value: "process_indicators", label: "Processo e indicadores" },
     ],
   },
   {
@@ -71,17 +73,6 @@ export const questions = [
       { value: "partial", label: "O CRM é utilizado parcialmente", score: 1 },
       { value: "spreadsheets", label: "Em planilhas e WhatsApp", score: 2 },
       { value: "scattered", label: "As informações ficam dispersas", score: 3 },
-    ],
-  },
-  {
-    id: "bottleneck",
-    question: "Qual é hoje o principal gargalo comercial?",
-    answers: [
-      { value: "prospecting", label: "Prospecção" },
-      { value: "followup", label: "Acompanhamento" },
-      { value: "conversion", label: "Conversão" },
-      { value: "team", label: "Gestão da equipe" },
-      { value: "process_indicators", label: "Processo e indicadores" },
     ],
   },
   {

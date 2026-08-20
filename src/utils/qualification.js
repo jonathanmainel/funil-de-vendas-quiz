@@ -34,7 +34,9 @@ export function calculateQualification(answers) {
   const declared = declaredDimension[answers.bottleneck];
   const dominant = topDimensions.includes(declared) ? declared : topDimensions[0];
 
-  const decisionMaker = ["owner", "manager"].includes(answers.role);
+  const decisionMaker = ["Dono ou sócio", "Gestor comercial"].includes(
+    answers.jobTitle,
+  );
   const adequateTeam = answers.team_size !== "one_two";
   const immediate = ["now", "thirty_days"].includes(answers.timeline);
   const mediumTerm = answers.timeline === "ninety_days";
