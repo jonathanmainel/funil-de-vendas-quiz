@@ -4,7 +4,7 @@ import { ProgressBar } from "./ProgressBar";
 export function SuccessScreen({ queued }) {
   return (
     <section className="screen screen--success" aria-labelledby="success-title">
-      <ProgressBar current={8} total={8} />
+      <ProgressBar current={7} total={7} />
       <div className="success-icon">
         <CheckIcon />
       </div>

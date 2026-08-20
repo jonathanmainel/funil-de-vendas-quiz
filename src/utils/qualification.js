@@ -13,7 +13,6 @@ const initialScores = {
   planning: 0,
   execution: 0,
   management: 0,
-  technology: 0,
 };
 
 export function calculateQualification(answers) {

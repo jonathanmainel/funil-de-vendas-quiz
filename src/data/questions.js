@@ -65,17 +65,6 @@ export const questions = [
     ],
   },
   {
-    id: "crm_usage",
-    question: "Como o time registra as informações comerciais?",
-    dimension: "technology",
-    answers: [
-      { value: "consistent", label: "O CRM é utilizado consistentemente", score: 0 },
-      { value: "partial", label: "O CRM é utilizado parcialmente", score: 1 },
-      { value: "spreadsheets", label: "Em planilhas e WhatsApp", score: 2 },
-      { value: "scattered", label: "As informações ficam dispersas", score: 3 },
-    ],
-  },
-  {
     id: "timeline",
     question: "Quando a empresa pretende melhorar essa operação?",
     answers: [
@@ -92,5 +81,4 @@ export const dimensionLabels = {
   planning: "Planejamento",
   execution: "Execução e acompanhamento",
   management: "Gestão por indicadores",
-  technology: "Adoção de tecnologia",
 };
