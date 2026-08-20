@@ -47,13 +47,13 @@ export function ContactScreen({ onSubmit, onBack, isSubmitting, submitError, onP
 
   return (
     <section className="screen screen--contact" aria-labelledby="contact-title">
-      <ProgressBar current={8} total={8} />
+      <ProgressBar current={7} total={7} />
       <div className="question-meta">Última etapa</div>
       <h1 id="contact-title" className="contact-title">
         Como nossa equipe pode falar com você?
       </h1>
       <p className="contact-copy">
-        Preencha seus dados para solicitar a reunião diagnóstica sem custo.
+        Preencha com seus dados
       </p>
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <Field

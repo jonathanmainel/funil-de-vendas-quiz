@@ -8,7 +8,6 @@ const healthyAnswers = {
   goals: "action_plan",
   followup: "routine",
   insight_timing: "during_month",
-  crm_usage: "consistent",
   bottleneck: "process_indicators",
   timeline: "now",
 };
@@ -34,12 +33,12 @@ describe("calculateQualification", () => {
     expect(result.dominantBottleneck).toBe("planning");
   });
 
-  it("identifica adoção de tecnologia como maior fragilidade isolada", () => {
+  it("identifica execução e acompanhamento como maior fragilidade isolada", () => {
     const result = calculateQualification({
       ...healthyAnswers,
-      crm_usage: "scattered",
+      followup: "unreliable",
       bottleneck: "prospecting",
     });
-    expect(result.dominantBottleneck).toBe("technology");
+    expect(result.dominantBottleneck).toBe("execution");
   });
 });
