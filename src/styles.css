@@ -124,7 +124,7 @@ a:focus-visible {
 
 .progress {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 9px;
   width: 100%;
   margin-bottom: 58px;
