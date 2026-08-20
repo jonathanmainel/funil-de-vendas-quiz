@@ -1,13 +1,12 @@
 export function Brand() {
   return (
-    <div className="brand" aria-label="Funil de Vendas, unidade Ribeirão Preto">
+    <div className="brand" aria-label="Funil de Vendas">
       <img
-        src="/funil-de-vendas-logo.png"
+        src={`${import.meta.env.BASE_URL}funil-de-vendas-logo.png`}
         alt="Funil de Vendas"
-        width="190"
-        height="57"
+        width="477"
+        height="75"
       />
-      <span>Unidade Ribeirão Preto</span>
     </div>
   );
 }
