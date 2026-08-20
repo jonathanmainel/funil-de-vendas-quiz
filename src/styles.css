@@ -86,14 +86,12 @@ a:focus-visible {
 .site-header {
   position: relative;
   z-index: 2;
-  min-height: 76px;
+  min-height: 58px;
 }
 
 .brand {
   display: inline-flex;
-  flex-direction: column;
   align-items: flex-start;
-  gap: 2px;
 }
 
 .brand img {
@@ -101,14 +99,6 @@ a:focus-visible {
   width: 190px;
   height: auto;
   object-fit: contain;
-}
-
-.brand span {
-  margin-left: 3px;
-  color: var(--muted);
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
 }
 
 .quiz-card {
@@ -540,7 +530,7 @@ h2 {
   }
 
   .site-header {
-    min-height: 84px;
+    min-height: 64px;
     display: flex;
     justify-content: center;
   }
@@ -551,10 +541,6 @@ h2 {
 
   .brand img {
     width: 165px;
-  }
-
-  .brand span {
-    margin-left: 0;
   }
 
   .quiz-card {
