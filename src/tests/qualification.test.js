@@ -17,6 +17,22 @@ describe("calculateQualification", () => {
     expect(calculateQualification(healthyAnswers).priority).toBe("high");
   });
 
+  it("reconhece cargo de liderança informado em texto livre", () => {
+    const result = calculateQualification({
+      ...healthyAnswers,
+      jobTitle: "Diretora Comercial",
+    });
+    expect(result.priority).toBe("high");
+  });
+
+  it("mantém cargo sem poder de decisão como prioridade baixa", () => {
+    const result = calculateQualification({
+      ...healthyAnswers,
+      jobTitle: "Assistente comercial",
+    });
+    expect(result.priority).toBe("low");
+  });
+
   it("classifica horizonte de 90 dias como prioridade média", () => {
     const result = calculateQualification({ ...healthyAnswers, timeline: "ninety_days" });
     expect(result.priority).toBe("medium");
