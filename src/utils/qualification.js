@@ -15,6 +15,17 @@ const initialScores = {
   management: 0,
 };
 
+function isDecisionMaker(jobTitle = "") {
+  const normalizedTitle = jobTitle
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+
+  return /\b(dono|dona|socio|socia|proprietario|proprietaria|fundador|fundadora|ceo|diretor|diretora|gestor|gestora|gerente)\b/.test(
+    normalizedTitle,
+  );
+}
+
 export function calculateQualification(answers) {
   const scores = { ...initialScores };
 
@@ -33,9 +44,7 @@ export function calculateQualification(answers) {
   const declared = declaredDimension[answers.bottleneck];
   const dominant = topDimensions.includes(declared) ? declared : topDimensions[0];
 
-  const decisionMaker = ["Dono ou sócio", "Gestor comercial"].includes(
-    answers.jobTitle,
-  );
+  const decisionMaker = isDecisionMaker(answers.jobTitle);
   const adequateTeam = answers.team_size !== "one_two";
   const immediate = ["now", "thirty_days"].includes(answers.timeline);
   const mediumTerm = answers.timeline === "ninety_days";
